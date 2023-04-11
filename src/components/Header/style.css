@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@100;500;600;700&display=swap");
+
+.header-container {
+    position: relative;
+}
+
+.header-container li {
+    margin: 10px 0;
+}
+
+.header-menu {
+    position: absolute;
+    left: 0;
+    top: 100px;
+    letter-spacing: 1px;
+    font-family: 'syncopate', sans-serif;
+    color: #626262;
+    text-transform: uppercase;
+    list-style: none;
+}
+
+#header-text {
+    font-size: 20vw;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Bai Jamjuree", sans-serif;
+    font-weight: 600;
+}
+
+@media (max-width: 800px) {
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        padding: 50px 0;
+    }
+
+    .header-menu {
+        position: unset;
+        display: flex;
+        top: 0;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 320px) {
+    .header-menu li {
+        font-size: 10px;
+    }
+
+    .header-menu {
+        justify-content: space-evenly;
+    }
+}
