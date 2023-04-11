@@ -3,8 +3,10 @@ import "./style.css"
 
 function Navbar() {
   return (
-    <div>
-      
+    <div className='navbar'>
+      <div>menu</div>
+      <div>Flirty Flowers</div>
+      <div>cart</div>
     </div>
   )
 }
