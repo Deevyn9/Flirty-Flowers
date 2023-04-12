@@ -6,12 +6,12 @@ import Featured from '../components/Featured/Featured';
 import About from '../components/About/About';
 import Gallery from '../components/Gallery/Gallery';
 import Footer from '../components/Footer/Footer';
-// import CustomCursor from '../CustomCursor'
+import CustomCursor from '../CustomCursor'
 
 function Home() {
   return (
     <>
-      {/* <CustomCursor /> */}
+      <CustomCursor />
 
       <div className="main-container" id="main-container">
         <Navbar />
