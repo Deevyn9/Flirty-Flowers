@@ -38,6 +38,7 @@ function GalleryItem({
 }) {
   return (
     <div className="gallery-item-wrapper">
+      <div />
       <div className="gallery-item">
         <div className="gallery-item-info">
           <h1 className="gallery-info-title">{title}</h1>
@@ -46,6 +47,7 @@ function GalleryItem({
         </div>
         <div className="gallery-item-image" style={{ backgroundImage: `url(${src})` }}></div>
       </div>
+      <div />
     </div>
   );
 }
@@ -56,7 +58,11 @@ function Gallery() {
   return (
     <section className="section-wrapper gallery-wrap">
       <div className="gallery">
-        <div className="gallery-counter"></div>
+        <div className="gallery-counter">
+          <span>{activeImage}</span>
+          <span className='divider' />
+          <span>{images.length}</span>
+        </div>
         {images.map((image, index) => (
           <GalleryItem
             key={image.src}
