@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import Navbar from '../components/Navbar/Navbar';
 import Header from '../components/Header/Header';
@@ -9,7 +9,52 @@ import Footer from '../components/Footer/Footer';
 import CustomCursor from '../CustomCursor'
 
 function Home() {
-  const [preloader, setPreloader] = useState(true)
+  // const [preloader, setPreloader] = useState(true);
+
+  // const [timer, setTimer] = useState(3);
+
+  // const id = useRef(null);
+
+  // const clear = () => {
+  //   window.clearInterval(id.current);
+  //   setPreloader(false);
+  // }
+
+  // useEffect(() => {
+  //   id.current = window.setInterval(() => {
+  //     setTimer((timer) => timer - 1)
+  //   }, 1000);
+  // }, []);
+
+  // useEffect(() => {
+  //   if (timer === 0) {
+  //     clear();
+  //   }
+  // }, [timer]);
+
+  const [preloader, setPreloader] = useState(true);
+
+  const [timer, setTimer] = useState(3);
+
+  const id = useRef(null);
+
+  const clear = () => {
+    window.clearInterval(id.current);
+    setPreloader(false)
+  }
+
+  useEffect(() => {
+    id.current = window.setInterval(() => {
+      setTimer((timer) => timer - 1);
+    }, 1000);
+  }, []);
+
+  useEffect(() => {
+    if (timer === 0) {
+      clear();
+    }
+  }, [timer])
+
   return (
     <>
       <CustomCursor />
