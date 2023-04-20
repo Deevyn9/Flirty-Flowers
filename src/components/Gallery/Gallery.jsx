@@ -56,11 +56,11 @@ function Gallery() {
   const [activeImage, setActiveImage] = useState(1);
 
   return (
-    <section className="section-wrapper gallery-wrap">
+    <section className="section-wrapper gallery-wrap" data-scroll-section >
       <div className="gallery">
         <div className="gallery-counter">
           <span>{activeImage}</span>
-          <span className='divider' />
+          <span className="divider" />
           <span>{images.length}</span>
         </div>
         {images.map((image, index) => (
