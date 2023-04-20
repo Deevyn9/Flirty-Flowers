@@ -9,51 +9,30 @@ import Footer from '../components/Footer/Footer';
 import CustomCursor from '../CustomCursor'
 
 function Home() {
-  // const [preloader, setPreloader] = useState(true);
-
-  // const [timer, setTimer] = useState(3);
-
-  // const id = useRef(null);
-
-  // const clear = () => {
-  //   window.clearInterval(id.current);
-  //   setPreloader(false);
-  // }
-
-  // useEffect(() => {
-  //   id.current = window.setInterval(() => {
-  //     setTimer((timer) => timer - 1)
-  //   }, 1000);
-  // }, []);
-
-  // useEffect(() => {
-  //   if (timer === 0) {
-  //     clear();
-  //   }
-  // }, [timer]);
-
   const [preloader, setPreloader] = useState(true);
-
-  const [timer, setTimer] = useState(3);
-
+  const [timer, setTimer] = useState(5);
   const id = useRef(null);
 
   const clear = () => {
     window.clearInterval(id.current);
-    setPreloader(false)
-  }
+    setPreloader(false);
+      };
 
   useEffect(() => {
     id.current = window.setInterval(() => {
       setTimer((timer) => timer - 1);
-    }, 1000);
+    }, 1000)
+
+    return () => {
+      window.clearInterval(id.current)
+    }
   }, []);
 
   useEffect(() => {
     if (timer === 0) {
       clear();
     }
-  }, [timer])
+  }, [timer]);
 
   return (
     <>
@@ -65,7 +44,10 @@ function Home() {
           <h2>Rio de Janeiro</h2>
         </div>
       ) : (
-        <div className="main-container" id="main-container">
+        <div className="main-container" id="main-container"
+
+        data-scroll-container
+        >
           <Navbar />
           <Header />
           <Featured />
