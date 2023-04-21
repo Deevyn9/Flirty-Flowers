@@ -7,9 +7,13 @@ import About from '../components/About/About';
 import Gallery from '../components/Gallery/Gallery';
 import Footer from '../components/Footer/Footer';
 import CustomCursor from '../CustomCursor'
+import useLocoScroll from '../hooks/useLocoScroll';
 
 function Home() {
   const [preloader, setPreloader] = useState(true);
+
+  useLocoScroll(!preloader);
+  
   const [timer, setTimer] = useState(5);
   const id = useRef(null);
 
