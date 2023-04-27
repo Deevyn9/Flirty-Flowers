@@ -29,6 +29,10 @@
     font-weight: 600;
 }
 
+.lineChildren {
+    transform: translate(0, 500px);
+}
+
 @media (max-width: 800px) {
     .header-container {
         display: flex;
