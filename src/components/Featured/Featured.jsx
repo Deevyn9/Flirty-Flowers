@@ -8,12 +8,12 @@ function Featured() {
     <section className="featured-section" data-scroll-section>
       <div className="featured-row-layout">
         <h6>green</h6>
-        <img src={firstUrl} alt="first Image" />
+        <img src={firstUrl} alt="first Image" data-scroll />
       </div>
       <div className="featured-column-layout">
         <h6>lily</h6>
 
-        <img src={secondUrl} alt="second image" />
+        <img src={secondUrl} alt="second image" data-scroll />
       </div>
     </section>
   );
